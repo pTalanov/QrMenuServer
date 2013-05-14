@@ -2,7 +2,8 @@
 
 <table>
   <tr>
-    <th>Table Number</th>
+    <th>Table</th>
+    <th></th>
     <th>Total</th>
     <th></th>
     <th></th>
@@ -11,9 +12,10 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.table_num %></td>
-    <td><%= order.prices %></td>
+    <td></td>
+    <td><%= order.total %></td>
     <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

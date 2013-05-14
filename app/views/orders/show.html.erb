@@ -1,20 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Table num:</b>
+  <b>Table number:</b>
   <%= @order.table_num %>
 </p>
 
-<p>
-  <b>Items:</b>
-  <%= @order.items %>
-</p>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+
+  <% @order.get_items.each_with_index do |item, index| %>
+      <tr>
+        <td><%= item %></td>
+        <td><%= @order.get_prices[index] %></td>
+      </tr>
+  <% end %>
+
+</table>
 
 <p>
-  <b>Prices:</b>
-  <%= @order.prices %>
+  <b>Total:</b>
+  <%= @order.total %>
 </p>
 
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
