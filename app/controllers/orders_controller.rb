@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.all(:order => 'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
